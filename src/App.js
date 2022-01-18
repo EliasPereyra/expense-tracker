@@ -1,25 +1,47 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useRef, useEffect } from 'react'
+import { Grid } from '@material-ui/core';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+import useStyles from './styles'
+
+import { SpeechState, useSpeechContext } from '@speechly/react-client';
+import { PushToTalkButton, PushToTalkButtonContainer } from '@speechly/react-ui';
+
+import { Details, Main } from './components'
+
+const App = () => {
+    const classes = useStyles();
+    const { speechState } = useSpeechContext();
+    const main = useRef(null);
+
+    const executeScroll = () => main.current.scrollIntoView();
+    
+    useEffect (() => {
+        if (speechState === SpeechState.Recording){
+            executeScroll();
+        }
+    },[speechState]);
+
+    return (
+        <div>
+            <Grid className={classes.grid} container spacing={0} alignItems="center" justifyContent="center" style={{height: '100vh'}}>
+                <Grid className={classes.mobile}>
+                    <Details title="Income" />
+                </Grid>
+                <Grid ref={main} item xs={12} sm={3} className={classes.main}>
+                    <Main />
+                </Grid>
+                <Grid xs={12} sm={4} item className={classes.desktop}>
+                    <Details title="Income" />
+                </Grid>
+                <Grid xs={12} sm={4} item className={classes.last}>
+                    <Details title="Expense" />
+                </Grid>
+            </Grid>
+            <PushToTalkButtonContainer>
+                <PushToTalkButton />
+            </PushToTalkButtonContainer>
+        </div>
+    )
 }
 
-export default App;
+export default App
