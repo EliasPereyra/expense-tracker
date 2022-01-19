@@ -43,7 +43,7 @@ const NewTransactionForm = () => {
     useEffect(() => {
         console.log(segment)
         if(segment){
-            if(segment?.intent.intent === 'add_expense'){
+            if(segment.intent.intent === 'add_expense'){
                 setFormData({...formData, type: 'Expense'})
             } else if (segment.intent.intent === 'add_income'){
                 setFormData({...formData, type: 'Income'})

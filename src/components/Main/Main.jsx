@@ -17,9 +17,9 @@ const ExpenseTracker = () => {
 
     return (
         <Card className={classes.root}>
-            <CardHeader title="Expense Tracker" subheader="Powered by Speechly" />
+            <CardHeader className={classes.header} title="Expense Tracker" subheader="Powered by Speechly" />
             <CardContent>
-                <Typography align="center" variant="h5">Total Balance ${balance}</Typography>
+                <Typography align="center" variant="h5">Total Balance: <span style={{fontWeight: 'bold'}}>${balance}</span></Typography>
                 <Typography variant="subtitle1" style={{lineHeight: '1.5em', marginTop: '20px'}}>
                     <InfoCard />
                 </Typography>
