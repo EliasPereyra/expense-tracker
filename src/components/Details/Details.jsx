@@ -1,4 +1,6 @@
 import { Card, CardHeader, CardContent, Typography } from '@material-ui/core'
+import SaveAltIcon from '@material-ui/icons/SaveAlt';
+import PublishIcon from '@material-ui/icons/Publish';
 import { Chart as ChartJS, ArcElement, Tooltip, Legend } from 'chart.js'
 import { Doughnut } from 'react-chartjs-2'
 import useTransactions from '../../useTransactions'
@@ -10,12 +12,16 @@ ChartJS.register(ArcElement, Tooltip, Legend);
 const DetailsCard = ({title, subheader}) => {
     const {total, chartData} = useTransactions(title)
     const classes = useStyles();
+    const Icons = ({title}) => {
+        return title === 'Income' ? <SaveAltIcon /> : <PublishIcon />;
+    }
 
     return (
         <Card className={title === 'Income' ? classes.income : classes.expense}>
             <CardHeader title={title} subheader={subheader} />
+            <Icons title={title} />
             <CardContent>
-                <Typography variant="h4" align="center" className={classes.price}>${total}</Typography>
+                <Typography variant="h4" align="center" className={title === 'Income' ? classes.priceIncome : classes.priceExpense}>${total}</Typography>
                 <Doughnut data={chartData} />
             </CardContent>
         </Card>
