@@ -3,7 +3,10 @@
   "author": "Elias Pereyra",
   "description": "It is a single page application, for tracking your finances, incomes and outcomes.",
   "version": "0.1.0",
-  "repository": "https://github.com/eliaspereyra/expense-tracker",
+  "repository": {
+    "type": "It is a single page application, for tracking your finances, incomes and outcomes.",
+    "url": "https://github.com/eliaspereyra/expense-tracker"
+  },
   "keywords": ["reactjs", "speechly", "react-context", "material-ui"],
   "private": false,
   "dependencies": {
