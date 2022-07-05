@@ -7,7 +7,12 @@
     "type": "It is a single page application, for tracking your finances, incomes and outcomes.",
     "url": "https://github.com/eliaspereyra/expense-tracker"
   },
-  "keywords": ["reactjs", "speechly", "react-context", "material-ui"],
+  "keywords": [
+    "reactjs",
+    "speechly",
+    "react-context",
+    "material-ui"
+  ],
   "private": false,
   "dependencies": {
     "@material-ui/core": "4.12.3",
@@ -29,11 +34,7 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
-  "eslintConfig": {
-    "extends": [
-      "react-app"
-    ]
-  },
+  
   "browserslist": {
     "production": [
       ">0.2%",
@@ -45,5 +46,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "standard": "^17.0.0"
   }
 }
