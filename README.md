@@ -1,7 +1,14 @@
 # Expense Tracker
 
-It is a single page application, for tracking your finances, incomes and outcomes. 
-Built with **React.js** and with the technology AI of [Speechly](https://www.speechly.com/).
+A SAP (Single Page Application), for tracking your finances, incomes and outcomes.
+
+## Built with 
+
+- ![React.js][React.js]
+- ![Material UI][Material UI]
+
+[React.js]: https://img.shields.io/badge/react.js-61DAFB?style=for-the-badge&logo=react&logoColor=white
+[Material UI]: https://img.shields.io/badge/mui-007FFF?style=for-the-badge&logo=mui&logoColor=white
 
 ## Available Scripts
 
