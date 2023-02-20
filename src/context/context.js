@@ -1,4 +1,4 @@
-import { createContext, useReducer } from 'react';
+import { createContext, useReducer } from 'react'
 
 import contextReducer from './contextReducer';
 import transactions from '../mocks/transactions'
