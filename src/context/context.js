@@ -1,9 +1,9 @@
 import { createContext, useReducer } from 'react'
 
 import contextReducer from './contextReducer';
-import transactions from '../mocks/transactions'
+import { transactionsData } from '../mocks/transactions'
 
-const initialState = JSON.parse(localStorage.getItem('transactions')) || transactions;
+const initialState = JSON.parse(localStorage.getItem('transactions')) || transactionsData;
 
 export const ExpenseTrackerContext = createContext(initialState);
 
