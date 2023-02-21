@@ -4,7 +4,10 @@ const isIncome = Math.round(Math.random())
 
 const InfoCard = () => {
   return (
-    <div elevation={3} style={{ textAlign: 'center', padding: '0 10%' }}>
+    <div
+      elevation={3}
+      style={{ textAlign: 'center', padding: '0 10%', boxShadow: 'none' }}
+    >
       <small>
         Try saying: <br />
       </small>
